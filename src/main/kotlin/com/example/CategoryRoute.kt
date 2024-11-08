@@ -16,19 +16,22 @@ fun Route.categoryRoute(categoryRepository: CategoryRepository) {
 
     val logger = LoggerFactory.getLogger("CategoryRoute")
 
-    get {
-        try {
-            val categories = categoryRepository.getCategory()
-            call.respond(HttpStatusCode.OK, categories)
-        } catch (e: SQLException) {
-            logger.error("Database error while retrieving categories", e)
-            call.respond(HttpStatusCode.InternalServerError, "Database error occurred")
-        } catch (e: Exception) {
-            logger.error("Unexpected error while retrieving categories", e)
-            call.respond(HttpStatusCode.InternalServerError, "Failed to retrieve categories")
+    route("/category") {
+
+
+        get {
+            try {
+                val categories = categoryRepository.getCategory()
+                call.respond(HttpStatusCode.OK, categories)
+            } catch (e: SQLException) {
+                logger.error("Database error while retrieving categories", e)
+                call.respond(HttpStatusCode.InternalServerError, "Database error occurred")
+            } catch (e: Exception) {
+                logger.error("Unexpected error while retrieving categories", e)
+                call.respond(HttpStatusCode.InternalServerError, "Failed to retrieve categories")
+            }
         }
+
     }
-
-
 }
 
