@@ -1,5 +1,6 @@
 package com.example
 
+import com.example.Repositories.Categories.ServiceCategoryImpl
 import com.example.plugins.*
 import io.ktor.server.application.*
 
@@ -11,5 +12,10 @@ fun Application.module() {
 
     val database = MongoClientConnection.connectDB()
 
-    configureRouting()
+    val serviceCategoryImpl = ServiceCategoryImpl(database)
+
+    configureRouting(
+        categoryRepository =  serviceCategoryImpl,
+
+    )
 }
