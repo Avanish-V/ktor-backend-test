@@ -27,12 +27,7 @@ object MongoClientConnection {
         val connectionString = "mongodb+srv://ashutoshkumar1552002:avanish8787@quickservicecluster.mdlniyf.mongodb.net/?retryWrites=true&w=majority&appName=QuickServiceCluster"
 
 
-        val settings = MongoClientSettings.builder()
-            .applyConnectionString(ConnectionString(connectionString))
-            .serverApi(ServerApi.builder().version(ServerApiVersion.V1).build())
-            .build()
-        val mongoClient = MongoClient.create(settings)
-
+        val mongoClient = MongoClient.create(connectionString)
 
         return mongoClient.getDatabase("QuickServiceCluster")
     }
