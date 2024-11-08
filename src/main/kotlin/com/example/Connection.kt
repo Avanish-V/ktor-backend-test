@@ -16,15 +16,15 @@ object MongoClientConnection {
 
 
 
-        val user = System.getenv("MONGODB_USER") ?: throw IllegalStateException("Missing MONGODB_USER environment variable")
-        val password = System.getenv("DB_PASSWORD") ?: throw IllegalStateException("Missing MONGODB_PASSWORD environment variable")
-        val hostname = System.getenv("MONGODB_HOST") ?: throw IllegalStateException("Missing MONGODB_HOSTNAME environment variable")
-        val databaseName = System.getenv("MONGODB_DATABASE") ?: throw IllegalStateException("Missing MONGODB_DATABASE environment variable")
-        val port = System.getenv("PORT") ?:"8080"
-        val connectionString = "mongodb+srv://$user:$password@$hostname/?retryWrites=true&w=majority&appName=$databaseName"
+//        val user = System.getenv("MONGODB_USER") ?: throw IllegalStateException("Missing MONGODB_USER environment variable")
+//        val password = System.getenv("DB_PASSWORD") ?: throw IllegalStateException("Missing MONGODB_PASSWORD environment variable")
+//        val hostname = System.getenv("MONGODB_HOST") ?: throw IllegalStateException("Missing MONGODB_HOSTNAME environment variable")
+//        val databaseName = System.getenv("MONGODB_DATABASE") ?: throw IllegalStateException("Missing MONGODB_DATABASE environment variable")
+//        val port = System.getenv("PORT") ?:"8080"
+//        val connectionString = "mongodb+srv://$user:$password@$hostname/?retryWrites=true&w=majority&appName=$databaseName"
 
 
-        //val connectionString = "mongodb+srv://ashutoshkumar1552002:avanish8787@quickservicecluster.mdlniyf.mongodb.net/?retryWrites=true&w=majority&appName=QuickServiceCluster"
+        val connectionString = "mongodb+srv://ashutoshkumar1552002:avanish8787@quickservicecluster.mdlniyf.mongodb.net/?retryWrites=true&w=majority&appName=QuickServiceCluster"
 
 
         val settings = MongoClientSettings.builder()
