@@ -18,4 +18,5 @@ fun Application.module() {
         categoryRepository =  serviceCategoryImpl,
     )
     configureSerialization()
+    //hello
 }
