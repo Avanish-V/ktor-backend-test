@@ -16,6 +16,6 @@ fun Application.module() {
 
     configureRouting(
         categoryRepository =  serviceCategoryImpl,
-
     )
+    configureSerialization()
 }
